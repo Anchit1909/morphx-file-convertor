@@ -1,3 +1,5 @@
+import Dropzone from "@/components/Dropzone";
+
 export default function Home() {
   return (
     <div className="space-y-16 pb-8">
@@ -12,6 +14,7 @@ export default function Home() {
           elevate your content like never before!
         </p>
       </div>
+      <Dropzone />
     </div>
   );
 }

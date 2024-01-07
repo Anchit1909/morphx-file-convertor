@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Header from "@/components/Navigation/Header";
+import Footer from "@/components/Navigation/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const ibmPlexMono = IBM_Plex_Mono({
@@ -42,10 +44,11 @@ export default function RootLayout({
               alt="Background Image"
             />
           </div>
-          <Navbar />
+          <Header />
           <Toaster />
           <div className="pt-32 min-h-screen lg:pt-36 2xl:pt-44 container max-w-4xl lg:max-w-6xl 2xl:max-w-7xl">
             {children}
+            <Footer />
           </div>
         </div>
       </body>

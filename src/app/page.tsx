@@ -4,14 +4,18 @@ export default function Home() {
   return (
     <div className="space-y-16 pb-8">
       <div className="space-y-6">
-        <h1 className="text-3xl md:text-5xl font-medium text-center">
-          Free Unlimited File Converter
-        </h1>
-        <p className="text-gray-400 text-md md:text-lg text-center md:px-24 xl:px-44 2xl:px-52">
-          Unleash your creativity with MorphX – the ultimate online tool for
-          unlimited and free multimedia conversion. Transform images, audio, and
-          videos effortlessly, without restrictions. Start converting now and
-          elevate your content like never before!
+        <div className="space-y-2">
+          <h1 className="text-3xl md:text-5xl font-bold italic text-center bg-gradient-to-r from-purple-700 via-pink-500 to-red-500 bg-clip-text text-transparent">
+            Unlimited File Conversions,
+          </h1>
+          <h1 className="text-3xl md:text-5xl font-bold text-center text-white">
+            No Strings Attached
+          </h1>
+        </div>
+        <p className="text-white/60 text-md md:text-lg text-center md:px-24 xl:px-44 2xl:px-52">
+          Unlock creativity with MorphX, your simple solution for free
+          multimedia conversion. Transform images, audio, and videos
+          effortlessly.
         </p>
       </div>
       <Dropzone />

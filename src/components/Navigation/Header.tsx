@@ -5,7 +5,7 @@ import Image from "next/image";
 function Header() {
   return (
     <nav className="sticky h-16 inset-x-0 top-0 z-30 w-full backdrop-blur-lg transition-all">
-      <div className="mx-auto w-full max-w-screen-xl px-2.5 md:px-20">
+      <div className="mx-auto w-full max-w-screen-lg px-2.5 md:px-4">
         <div className="md:px-10 px-2.5">
           <div className="flex h-16 items-center justify-between">
             <Link

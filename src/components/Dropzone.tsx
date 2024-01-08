@@ -1,7 +1,4 @@
 "use client";
-
-// imports
-import { FiUploadCloud } from "react-icons/fi";
 import { LuFileSymlink } from "react-icons/lu";
 import { MdClose } from "react-icons/md";
 import ReactDropzone from "react-dropzone";
@@ -29,6 +26,8 @@ import { Button } from "./ui/button";
 import loadFfmpeg from "@/utils/load-ffmpeg";
 import type { Action } from "../../types";
 import { FFmpeg } from "@ffmpeg/ffmpeg";
+import UploadIcon from "../../public/UploadIcon.svg";
+import Image from "next/image";
 
 const extensions = {
   image: [
@@ -433,7 +432,7 @@ export default function Dropzone() {
       {({ getRootProps, getInputProps }) => (
         <div
           {...getRootProps()}
-          className="backdrop-blur-lg h-72 lg:h-80 xl:h-96 rounded-3xl shadow-sm border-2 border-dashed cursor-pointer flex items-center justify-center"
+          className="bg-white/10 backdrop-blur-lg h-72 lg:h-80 xl:h-72 rounded-[30px] shadow-sm  cursor-pointer flex items-center justify-center"
         >
           <input {...getInputProps()} />
           <div className="space-y-4 text-gray-500">
@@ -449,10 +448,15 @@ export default function Dropzone() {
             ) : (
               <>
                 <div className="justify-center flex text-6xl">
-                  <FiUploadCloud />
+                  <Image
+                    src={UploadIcon}
+                    alt="Upload File"
+                    height={60}
+                    width={60}
+                  />
                 </div>
-                <h3 className="text-center font-medium text-2xl">
-                  Click, or drop your files here
+                <h3 className="text-center font-medium text-2xl text-[#ECECED]/80">
+                  Drag and drop your files
                 </h3>
               </>
             )}

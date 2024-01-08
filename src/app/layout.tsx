@@ -8,7 +8,7 @@ import Header from "@/components/Navigation/Header";
 import Footer from "@/components/Navigation/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-export const ibmPlexMono = IBM_Plex_Mono({
+const ibmPlexMono = IBM_Plex_Mono({
   weight: ["400", "500", "600"],
   subsets: ["latin"],
   variable: "--font-ibm",

@@ -446,19 +446,19 @@ export default function Dropzone() {
                 </h3>
               </>
             ) : (
-              <>
-                <div className="justify-center flex text-6xl">
+              <div className="flex flex-col items-center justify-center">
+                <div className="flex justify-center items-center text-6xl">
                   <Image
                     src={UploadIcon}
                     alt="Upload File"
-                    height={60}
-                    width={60}
+                    height={50}
+                    width={50}
                   />
                 </div>
-                <h3 className="text-center font-medium text-2xl text-[#ECECED]/80">
+                <h3 className="text-center font-medium text-xl text-[#ECECED]/80">
                   Drag and drop your files
                 </h3>
-              </>
+              </div>
             )}
           </div>
         </div>

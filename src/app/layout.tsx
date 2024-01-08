@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Header from "@/components/Navigation/Header";
@@ -33,22 +32,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(inter.variable, ibmPlexMono.variable)}>
-        <div className="relative w-full">
-          <div className="absolute -z-10 w-full">
-            <Image
-              src={"/background.png"}
-              className="w-full"
-              width={1000}
-              height={1000}
-              alt="Background Image"
-            />
-          </div>
-          <Header />
-          <Toaster />
-          <main>{children}</main>
-          <Footer />
-        </div>
+      <body
+        className={cn(inter.variable, ibmPlexMono.variable, "bg-[#05020d]")}
+      >
+        <Header />
+        <Toaster />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

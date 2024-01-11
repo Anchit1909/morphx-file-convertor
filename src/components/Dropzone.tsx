@@ -77,7 +77,7 @@ export default function Dropzone() {
   const [is_done, setIsDone] = useState<boolean>(false);
   const ffmpegRef = useRef<any>(null);
   const [defaultValues, setDefaultValues] = useState<string>("video");
-  const [selcted, setSelected] = useState<string>("...");
+  const [selected, setSelected] = useState<string>("");
   const accepted_files = {
     "image/*": [
       ".jpg",
@@ -229,11 +229,11 @@ export default function Dropzone() {
   // returns
   if (actions.length) {
     return (
-      <div className="space-y-6">
+      <div className="space-y-6 font-ibmPlexMono">
         {actions.map((action: Action, i: any) => (
           <div
             key={i}
-            className="w-full py-4 space-y-2 lg:py-0 relative cursor-pointer rounded-xl border-2 border-gray-800 h-fit lg:h-20 px-4 lg:px-10 flex flex-wrap lg:flex-nowrap items-center justify-between shadow-2xl"
+            className="w-full py-4 space-y-2 lg:py-0 relative cursor-pointer rounded-xl h-fit lg:h-20 px-4 lg:px-10 flex flex-wrap lg:flex-nowrap items-center justify-between shadow-2xl bg-white/10 backdrop-blur-lg"
           >
             {!is_loaded && (
               <Skeleton className="h-full w-full -ml-10 cursor-progress absolute rounded-xl" />
@@ -270,7 +270,7 @@ export default function Dropzone() {
                 </span>
               </Badge>
             ) : (
-              <div className="text-gray-400 text-md flex items-center gap-4">
+              <div className="text-gray-400 text-sm font-medium flex items-center gap-4">
                 <span>Convert to</span>
                 <Select
                   onValueChange={(value) => {
@@ -282,12 +282,15 @@ export default function Dropzone() {
                     setSelected(value);
                     updateAction(action.file_name, value);
                   }}
-                  value={selcted}
+                  value={selected}
                 >
-                  <SelectTrigger className="w-32 outline-none focus:outline-none focus:ring-0 text-center text-gray-600 bg-gray-50 text-md font-medium">
-                    <SelectValue placeholder="..." />
+                  <SelectTrigger className="w-32 outline-none focus:outline-none focus:ring-0 text-center text-gray-300 bg-black/30 text-md font-medium border-black placeholder:text-gray-300">
+                    <SelectValue
+                      placeholder="File Type"
+                      className="placeholder:text-gray-300"
+                    />
                   </SelectTrigger>
-                  <SelectContent className="h-fit">
+                  <SelectContent className="h-fit bg-black text-white">
                     {action.file_type.includes("image") && (
                       <div className="grid grid-cols-2 gap-2 w-fit">
                         {extensions.image.map((elt, i) => (
@@ -432,7 +435,7 @@ export default function Dropzone() {
       {({ getRootProps, getInputProps }) => (
         <div
           {...getRootProps()}
-          className="bg-white/10 backdrop-blur-lg h-64 lg:h-64 xl:h-64 rounded-[30px] shadow-sm  cursor-pointer flex items-center justify-center"
+          className="bg-white/10 backdrop-blur-lg h-64 lg:h-64 xl:h-64 rounded-[30px] shadow-sm  cursor-pointer flex items-center justify-center font-ibmPlexMono"
         >
           <input {...getInputProps()} />
           <div className="space-y-4 text-gray-500">
@@ -455,7 +458,7 @@ export default function Dropzone() {
                     width={50}
                   />
                 </div>
-                <h3 className="text-center font-medium text-lg text-[#ECECED]/80 font-ibmPlexMono">
+                <h3 className="text-center font-medium text-lg text-[#ECECED]/80">
                   Drag and drop your files
                 </h3>
               </div>

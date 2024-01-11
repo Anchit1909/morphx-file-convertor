@@ -33,7 +33,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn(inter.variable, ibmPlexMono.variable, "bg-[#05020d]")}
+        className={cn(
+          inter.variable,
+          ibmPlexMono.variable,
+          "bg-[#05020d] h-screen"
+        )}
       >
         <Header />
         <Toaster />

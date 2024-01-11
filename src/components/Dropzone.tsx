@@ -233,7 +233,7 @@ export default function Dropzone() {
         {actions.map((action: Action, i: any) => (
           <div
             key={i}
-            className="w-full py-4 space-y-2 lg:py-0 relative cursor-pointer rounded-xl border h-fit lg:h-20 px-4 lg:px-10 flex flex-wrap lg:flex-nowrap items-center justify-between"
+            className="w-full py-4 space-y-2 lg:py-0 relative cursor-pointer rounded-xl border-2 border-gray-800 h-fit lg:h-20 px-4 lg:px-10 flex flex-wrap lg:flex-nowrap items-center justify-between shadow-2xl"
           >
             {!is_loaded && (
               <Skeleton className="h-full w-full -ml-10 cursor-progress absolute rounded-xl" />
@@ -243,7 +243,7 @@ export default function Dropzone() {
                 {fileToIcon(action.file_type)}
               </span>
               <div className="flex items-center gap-1 w-96">
-                <span className="text-md font-medium overflow-x-hidden">
+                <span className="text-md font-medium overflow-x-hidden text-white/60 ">
                   {compressFileName(action.file_name)}
                 </span>
                 <span className="text-gray-400 text-sm">
@@ -432,7 +432,7 @@ export default function Dropzone() {
       {({ getRootProps, getInputProps }) => (
         <div
           {...getRootProps()}
-          className="bg-white/10 backdrop-blur-lg h-72 lg:h-80 xl:h-72 rounded-[30px] shadow-sm  cursor-pointer flex items-center justify-center"
+          className="bg-white/10 backdrop-blur-lg h-64 lg:h-64 xl:h-64 rounded-[30px] shadow-sm  cursor-pointer flex items-center justify-center"
         >
           <input {...getInputProps()} />
           <div className="space-y-4 text-gray-500">
@@ -455,7 +455,7 @@ export default function Dropzone() {
                     width={50}
                   />
                 </div>
-                <h3 className="text-center font-medium text-xl text-[#ECECED]/80">
+                <h3 className="text-center font-medium text-lg text-[#ECECED]/80 font-ibmPlexMono">
                   Drag and drop your files
                 </h3>
               </div>

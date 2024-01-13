@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="relative w-full mx-auto max-w-screen-lg px-10 md:px-20 pt-8 pb-10">
       <div className="absolute w-[600px] h-[600px] right-[400px] bg-red-500/[25%] -z-10  rounded-full blur-3xl" />
-      <div className="absolute  w-[600px] h-[600px] left-[400px] bg-purple-700/[25%] -z-10 rounded-full blur-3xl" />
+      <div className="absolute w-[600px] h-[600px] left-[400px] bg-purple-700/[25%] -z-10 rounded-full blur-3xl" />
       <div className="space-y-16">
         <div className="flex flex-col items-center justify-center space-y-6">
           <div className="space-y-2">
@@ -21,14 +21,14 @@ export default function Home() {
                 Introducing MorphX
               </p>
             </a>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold italic text-center bg-gradient-to-r from-red-500 via-pink-500 to-purple-700 bg-clip-text text-transparent">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold italic text-center bg-gradient-to-r from-red-500 via-pink-500 to-purple-700 bg-clip-text text-transparent">
               Unlimited File Conversions,
             </h1>
-            <h1 className="text-3xl md:text-5xl font-bold text-center text-white">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-center text-white">
               No Strings Attached
             </h1>
           </div>
-          <p className="text-white/60 text-base sm:text-lg text-center md:px-24">
+          <p className="text-white/60 text-sm sm:text-lg text-center md:px-24">
             Unlock creativity with MorphX, your simple solution for free
             multimedia conversion. Transform images, audio, and videos
             effortlessly.

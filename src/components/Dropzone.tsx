@@ -76,7 +76,7 @@ export default function Dropzone() {
   const [is_done, setIsDone] = useState<boolean>(false);
   const ffmpegRef = useRef<any>(null);
   const [defaultValues, setDefaultValues] = useState<string>("");
-  const [selected, setSelected] = useState<string>("");
+  const [selected, setSelected] = useState<Array<string>>([]);
   const accepted_files = {
     "image/*": [
       ".jpg",
@@ -99,6 +99,7 @@ export default function Dropzone() {
     setIsDone(false);
     setActions([]);
     setFiles([]);
+    setSelected([]);
     setIsReady(false);
     setIsConverting(false);
   };
@@ -185,7 +186,7 @@ export default function Dropzone() {
     setActions(
       actions.map((action): Action => {
         if (action.file_name === file_name) {
-          console.log("FOUND");
+          console.log("FOUND", to);
           return {
             ...action,
             to,
@@ -217,6 +218,7 @@ export default function Dropzone() {
   }, [actions]);
   useEffect(() => {
     load();
+    setSelected([]);
     setDefaultValues("video");
   }, []);
   const load = async () => {
@@ -277,10 +279,10 @@ export default function Dropzone() {
                     } else if (extensions.video.includes(value)) {
                       setDefaultValues("video");
                     }
-                    setSelected(value);
+                    setSelected([...selected, value]);
                     updateAction(action.file_name, value);
                   }}
-                  value={selected}
+                  value={selected[i]}
                 >
                   <SelectTrigger className="w-32 outline-none text-center text-gray-300 bg-black/30 text-md font-medium shadow-sm border-0 focus:outline-none focus:ring-0 focus:ring-offset-1 focus:ring-offset-transparent">
                     <SelectValue

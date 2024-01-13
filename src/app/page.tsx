@@ -1,4 +1,5 @@
 import Dropzone from "@/components/Dropzone";
+import { Button } from "@/components/ui/button";
 import { Twitter } from "lucide-react";
 
 export default function Home() {
@@ -32,6 +33,15 @@ export default function Home() {
             multimedia conversion. Transform images, audio, and videos
             effortlessly.
           </p>
+          {/* <div className="relative">
+            <div className="bg-gradient-to-tr from-purple-900 via-violet-500 to-orange-600 blur-lg absolute inset-0 pointer-events-none" />
+            <Button
+              size="lg"
+              className="bg-white text-black hover:bg-slate-100 p-3 px-8 relative"
+            >
+              Get Started
+            </Button>
+          </div> */}
         </div>
         <Dropzone />
       </div>

@@ -66,7 +66,6 @@ const extensions = {
 };
 
 export default function Dropzone() {
-  // variables & hooks
   const { toast } = useToast();
   const [is_hover, setIsHover] = useState<boolean>(false);
   const [actions, setActions] = useState<Action[]>([]);
@@ -76,7 +75,7 @@ export default function Dropzone() {
   const [is_converting, setIsConverting] = useState<boolean>(false);
   const [is_done, setIsDone] = useState<boolean>(false);
   const ffmpegRef = useRef<any>(null);
-  const [defaultValues, setDefaultValues] = useState<string>("video");
+  const [defaultValues, setDefaultValues] = useState<string>("");
   const [selected, setSelected] = useState<string>("");
   const accepted_files = {
     "image/*": [
@@ -96,7 +95,6 @@ export default function Dropzone() {
     "video/*": [],
   };
 
-  // functions
   const reset = () => {
     setIsDone(false);
     setActions([]);
@@ -219,6 +217,7 @@ export default function Dropzone() {
   }, [actions]);
   useEffect(() => {
     load();
+    setDefaultValues("video");
   }, []);
   const load = async () => {
     const ffmpeg_response: FFmpeg = await loadFfmpeg();
@@ -226,7 +225,6 @@ export default function Dropzone() {
     setIsLoaded(true);
   };
 
-  // returns
   if (actions.length) {
     return (
       <div className="space-y-6 font-ibmPlexMono">
@@ -284,13 +282,13 @@ export default function Dropzone() {
                   }}
                   value={selected}
                 >
-                  <SelectTrigger className="w-32 outline-none focus:outline-none focus:ring-0 text-center text-gray-300 bg-black/30 text-md font-medium border-black placeholder:text-gray-300">
+                  <SelectTrigger className="w-32 outline-none text-center text-gray-300 bg-black/30 text-md font-medium shadow-sm border-0 focus:outline-none focus:ring-0 focus:ring-offset-1 focus:ring-offset-transparent">
                     <SelectValue
                       placeholder="File Type"
                       className="placeholder:text-gray-300"
                     />
                   </SelectTrigger>
-                  <SelectContent className="h-fit bg-black text-white">
+                  <SelectContent className="h-fit bg-[#271738] text-gray-300 font-medium">
                     {action.file_type.includes("image") && (
                       <div className="grid grid-cols-2 gap-2 w-fit">
                         {extensions.image.map((elt, i) => (
@@ -304,7 +302,7 @@ export default function Dropzone() {
                     )}
                     {action.file_type.includes("video") && (
                       <Tabs defaultValue={defaultValues} className="w-full">
-                        <TabsList className="w-full">
+                        <TabsList className="w-full bg-black/30 font-medium text-gray-300">
                           <TabsTrigger value="video" className="w-full">
                             Video
                           </TabsTrigger>
@@ -353,13 +351,17 @@ export default function Dropzone() {
             )}
 
             {action.is_converted ? (
-              <Button variant="outline" onClick={() => download(action)}>
+              <Button
+                className="bg-white/90"
+                variant="outline"
+                onClick={() => download(action)}
+              >
                 Download
               </Button>
             ) : (
               <span
                 onClick={() => deleteAction(action)}
-                className="cursor-pointer hover:bg-gray-50 rounded-full h-10 w-10 flex items-center justify-center text-2xl text-gray-400"
+                className="cursor-pointer hover:bg-black/30 hover:text-gray-300 rounded-full h-10 w-10 flex items-center justify-center text-2xl text-gray-400"
               >
                 <MdClose />
               </span>
@@ -369,38 +371,48 @@ export default function Dropzone() {
         <div className="flex w-full justify-end">
           {is_done ? (
             <div className="space-y-4 w-fit">
-              <Button
-                size="lg"
-                className="rounded-xl font-semibold relative py-4 text-md flex gap-2 items-center w-full"
-                onClick={downloadAll}
-              >
-                {actions.length > 1 ? "Download All" : "Download"}
-                <HiOutlineDownload />
-              </Button>
+              <div className="relative">
+                <div className="bg-gradient-to-tr from-purple-900 via-violet-500 to-orange-600 blur-lg absolute inset-0 pointer-events-none" />
+                <Button
+                  size="lg"
+                  className="bg-white/90 text-black hover:bg-slate-100 p-3 px-8 relative z-10 font-inter font-medium flex gap-2 items-center w-full rounded-xl"
+                  onClick={downloadAll}
+                >
+                  {actions.length > 1 ? "Download All" : "Download"}
+                  <HiOutlineDownload />
+                </Button>
+              </div>
               <Button
                 size="lg"
                 onClick={reset}
                 variant="outline"
-                className="rounded-xl"
+                className="rounded-xl text-gray-300 bg-black/90 outline-none font-medium shadow-sm border-2 border-gray-100 focus:outline-none focus:ring-0 focus:ring-offset-1 focus:ring-offset-transparent"
               >
                 Convert Another File(s)
               </Button>
             </div>
           ) : (
-            <Button
-              size="lg"
-              disabled={!is_ready || is_converting}
-              className="rounded-xl font-semibold relative py-4 text-md flex items-center w-44"
-              onClick={convert}
-            >
-              {is_converting ? (
-                <span className="animate-spin text-lg">
-                  <ImSpinner3 />
-                </span>
+            <div className="relative">
+              {!is_ready || is_converting ? (
+                <div className="hidden" />
               ) : (
-                <span>Convert Now</span>
+                <div className="bg-gradient-to-tr from-purple-900 via-violet-500 to-orange-600 blur-lg absolute inset-0 pointer-events-none" />
               )}
-            </Button>
+              <Button
+                size="lg"
+                disabled={!is_ready || is_converting}
+                className="bg-white/90 text-black hover:bg-slate-100 p-3 px-8 relative z-10 font-inter font-medium"
+                onClick={convert}
+              >
+                {is_converting ? (
+                  <span className="animate-spin text-lg">
+                    <ImSpinner3 />
+                  </span>
+                ) : (
+                  <span>Convert Now</span>
+                )}
+              </Button>
+            </div>
           )}
         </div>
       </div>

@@ -36,7 +36,7 @@ export default function RootLayout({
         className={cn(
           inter.variable,
           ibmPlexMono.variable,
-          "bg-[#05020d] h-screen"
+          "bg-[#05020d] h-screen overflow-x-hidden"
         )}
       >
         <Header />

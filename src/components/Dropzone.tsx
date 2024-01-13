@@ -453,10 +453,10 @@ export default function Dropzone() {
           <div className="space-y-4 text-gray-500">
             {is_hover ? (
               <>
-                <div className="justify-center flex text-6xl">
-                  <LuFileSymlink />
+                <div className="flex justify-center items-center text-4xl text-[#B1B0B3]">
+                  <LuFileSymlink height={50} width={50} />
                 </div>
-                <h3 className="text-center font-medium text-2xl">
+                <h3 className="text-center font-medium text-lg text-[#ECECED]/80">
                   Yes, right there
                 </h3>
               </>

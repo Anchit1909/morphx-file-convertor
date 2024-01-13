@@ -14,7 +14,7 @@ export default function Home() {
               href="https://twitter.com/anchit1909"
               target="_blank"
               rel="noreferrer"
-              className="mx-auto mb-5 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full bg-white/10 backdrop-blur-lg px-12 py-[6px] transition-colors hover:bg-black"
+              className="mx-auto mb-5 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full bg-white/10 backdrop-blur-lg px-12 py-[6px] transition-colors hover:bg-stone-900"
             >
               <Twitter className="h-5 w-5 text-[#1d9bf0]" />
               <p className="text-sm font-semibold text-[#1d9bf0]">

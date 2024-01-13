@@ -1,6 +1,8 @@
 import Link from "next/link";
 import logo from "../../../public/Logo.svg";
 import Image from "next/image";
+import { Button } from "../ui/button";
+import { FaGithub } from "react-icons/fa";
 
 function Header() {
   return (
@@ -20,6 +22,22 @@ function Header() {
                 </span>
               </div>
             </Link>
+            <a
+              href="https://github.com/Anchit1909/file-convertor"
+              target="_blank"
+              rel="noreferrer"
+              className=""
+            >
+              <Button
+                variant="default"
+                size="icon"
+                className="bg-white/10 backdrop-blur-lg transition-colors hover:bg-stone-900"
+              >
+                <div className="text-2xl">
+                  <FaGithub />
+                </div>
+              </Button>
+            </a>
           </div>
         </div>
       </div>

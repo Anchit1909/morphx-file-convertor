@@ -21,14 +21,16 @@ export default function Home() {
                 Introducing MorphX
               </p>
             </a>
-            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold italic text-center bg-gradient-to-r from-red-500 via-pink-500 to-purple-700 bg-clip-text text-transparent">
-              Unlimited File Conversions,
-            </h1>
-            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-center text-white">
-              No Strings Attached
-            </h1>
+            <div className="-space-y-1">
+              <h1 className="text-[26px] sm:text-4xl md:text-5xl font-bold italic text-center bg-gradient-to-r from-red-500 via-pink-500 to-purple-700 bg-clip-text text-transparent">
+                Unlimited File Conversions,
+              </h1>
+              <h1 className="text-[26px] sm:text-4xl md:text-5xl font-bold text-center text-white">
+                No Strings Attached
+              </h1>
+            </div>
           </div>
-          <p className="text-white/60 text-sm sm:text-lg text-center md:px-24">
+          <p className="text-white/60 text-base sm:text-lg text-center md:px-24">
             Unlock creativity with MorphX, your simple solution for free
             multimedia conversion. Transform images, audio, and videos
             effortlessly.

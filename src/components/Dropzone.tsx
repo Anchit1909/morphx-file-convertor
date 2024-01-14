@@ -238,7 +238,7 @@ export default function Dropzone() {
             {!is_loaded && (
               <Skeleton className="h-full w-full -ml-10 cursor-progress absolute rounded-xl" />
             )}
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-4 items-center justify-between">
               <span className="text-2xl text-orange-600">
                 {fileToIcon(action.file_type)}
               </span>

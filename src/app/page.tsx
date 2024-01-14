@@ -20,7 +20,6 @@ export default function Home() {
           show: {
             transition: {
               staggerChildren: 0.15,
-              duration: 0.25,
             },
           },
         }}

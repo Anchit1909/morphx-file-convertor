@@ -279,7 +279,9 @@ export default function Dropzone() {
                     } else if (extensions.video.includes(value)) {
                       setDefaultValues("video");
                     }
-                    setSelected([...selected, value]);
+                    const updatedSelected = [...selected];
+                    updatedSelected[i] = value;
+                    setSelected(updatedSelected);
                     updateAction(action.file_name, value);
                   }}
                   value={selected[i]}

@@ -1,5 +1,8 @@
+"use client";
 import Dropzone from "@/components/Dropzone";
 import { Button } from "@/components/ui/button";
+import { FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";
+import { motion } from "framer-motion";
 import { Twitter } from "lucide-react";
 
 export default function Home() {
@@ -7,10 +10,26 @@ export default function Home() {
     <main className="relative w-full mx-auto max-w-screen-lg px-8 md:px-20 pt-8 pb-10">
       <div className="absolute w-[600px] h-[600px] right-[400px] bg-red-500/[25%] -z-10  rounded-full blur-3xl" />
       <div className="absolute w-[600px] h-[600px] left-[400px] bg-purple-700/[25%] -z-10 rounded-full blur-3xl" />
-      <div className="space-y-16">
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        animate="show"
+        viewport={{ once: true }}
+        variants={{
+          hidden: {},
+          show: {
+            transition: {
+              staggerChildren: 0.15,
+              duration: 0.25,
+            },
+          },
+        }}
+        className="space-y-16"
+      >
         <div className="flex flex-col items-center justify-center space-y-6">
           <div className="space-y-2">
-            <a
+            <motion.a
+              variants={FADE_DOWN_ANIMATION_VARIANTS}
               href="https://twitter.com/anchit1909"
               target="_blank"
               rel="noreferrer"
@@ -20,21 +39,27 @@ export default function Home() {
               <p className="text-sm font-semibold text-[#1d9bf0]">
                 Introducing MorphX
               </p>
-            </a>
-            <div className="-space-y-1">
+            </motion.a>
+            <motion.div
+              variants={FADE_DOWN_ANIMATION_VARIANTS}
+              className="-space-y-1"
+            >
               <h1 className="text-[27px] sm:text-4xl md:text-5xl font-bold italic text-center bg-gradient-to-r from-red-500 via-pink-500 to-purple-700 bg-clip-text text-transparent">
                 Unlimited File Conversions,
               </h1>
               <h1 className="text-[27px] sm:text-4xl md:text-5xl font-bold text-center text-white">
                 No Strings Attached
               </h1>
-            </div>
+            </motion.div>
           </div>
-          <p className="text-white/60 text-base sm:text-lg text-center md:px-24">
+          <motion.p
+            variants={FADE_DOWN_ANIMATION_VARIANTS}
+            className="text-white/60 text-base sm:text-lg text-center md:px-24"
+          >
             Unlock creativity with MorphX, your simple solution for free
             multimedia conversion. Transform images, audio, and videos
             effortlessly.
-          </p>
+          </motion.p>
           {/* <div className="relative">
             <div className="bg-gradient-to-tr from-purple-900 via-violet-500 to-orange-600 blur-lg absolute inset-0 pointer-events-none" />
             <Button
@@ -45,8 +70,10 @@ export default function Home() {
             </Button>
           </div> */}
         </div>
-        <Dropzone />
-      </div>
+        <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS}>
+          <Dropzone />
+        </motion.div>
+      </motion.div>
     </main>
   );
 }

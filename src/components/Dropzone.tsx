@@ -233,7 +233,7 @@ export default function Dropzone() {
         {actions.map((action: Action, i: any) => (
           <div
             key={i}
-            className="w-full py-4 space-y-2 lg:py-0 relative cursor-pointer rounded-xl h-fit lg:h-20 px-4 lg:px-10 flex flex-wrap lg:flex-nowrap items-center justify-between shadow-2xl bg-white/10 backdrop-blur-lg"
+            className="w-full py-4 space-y-2 lg:py-0 relative cursor-pointer rounded-xl h-fit lg:h-20 px-4 lg:px-10 flex flex-wrap lg:flex-nowrap items-center justify-between shadow-2xl bg-white/[10%] backdrop-blur-lg"
           >
             {!is_loaded && (
               <Skeleton className="-ml-4 md:-ml-10 h-full w-full cursor-progress absolute rounded-xl bg-white/10" />
@@ -451,7 +451,7 @@ export default function Dropzone() {
       {({ getRootProps, getInputProps }) => (
         <div
           {...getRootProps()}
-          className="bg-white/10 backdrop-blur-lg h-64 lg:h-64 xl:h-64 rounded-[30px] shadow-sm  cursor-pointer flex items-center justify-center font-ibmPlexMono"
+          className="bg-white/[6%] backdrop-blur-lg h-64 lg:h-64 xl:h-64 rounded-[30px] shadow-sm  cursor-pointer flex items-center justify-center font-ibmPlexMono"
         >
           <input {...getInputProps()} />
           <div className="space-y-4 text-gray-500">

@@ -9,8 +9,8 @@
   <a href="https://twitter.com/anchit1909" target="_blank">
     <img src="https://img.shields.io/twitter/follow/anchit1909?style=flat&label=anchit1909&logo=twitter&color=0bf&logoColor=fff" alt="Anchit Sinha Twitter follower count" />
   </a>
-  <a href="https://github.com/Anchit1909/groww-stonks" target="_blank">
-    <img src="https://img.shields.io/github/stars/Anchit1909/groww-stonks?label=Anchit1909%2FGrowwstonks" alt="MorphX repo star count" />
+  <a href="https://github.com/Anchit1909/morphx-file-convertor" target="_blank">
+    <img src="https://img.shields.io/github/stars/Anchit1909/morphx-file-convertor?label=Anchit1909%2FMorphX" alt="MorphX repo star count" />
   </a>
 </p>
 

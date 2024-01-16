@@ -55,9 +55,9 @@ export default function Home() {
             variants={FADE_DOWN_ANIMATION_VARIANTS}
             className="text-white/60 text-base sm:text-lg text-center md:px-24"
           >
-            Unlock creativity with MorphX, your simple solution for free
-            multimedia conversion. Transform images, audio, and videos
-            effortlessly.
+            Unlock secure and private file conversion with MorphX, your simple
+            solution for free multimedia conversion. Transform images, audio,
+            and videos effortlessly.
           </motion.p>
           {/* <div className="relative">
             <div className="bg-gradient-to-tr from-purple-900 via-violet-500 to-orange-600 blur-lg absolute inset-0 pointer-events-none" />

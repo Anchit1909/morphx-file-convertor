@@ -3,9 +3,9 @@ import { Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import Header from "@/components/Navigation/Header";
 import Footer from "@/components/Navigation/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const ibmPlexMono = IBM_Plex_Mono({
@@ -43,6 +43,7 @@ export default function RootLayout({
         <Toaster />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

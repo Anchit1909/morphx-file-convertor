@@ -451,7 +451,7 @@ export default function Dropzone() {
       {({ getRootProps, getInputProps }) => (
         <div
           {...getRootProps()}
-          className="bg-white/[10%] sm:bg-white/[6%] backdrop-blur-lg h-64 lg:h-64 xl:h-64 rounded-[30px] shadow-sm  cursor-pointer flex items-center justify-center font-ibmPlexMono"
+          className="bg-white/[8%] sm:bg-white/[7%] backdrop-blur-lg h-64 lg:h-64 xl:h-64 rounded-[30px] shadow-sm  cursor-pointer flex items-center justify-center font-ibmPlexMono"
         >
           <input {...getInputProps()} />
           <div className="space-y-4 text-gray-500">

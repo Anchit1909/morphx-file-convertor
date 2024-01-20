@@ -8,8 +8,8 @@ import { Twitter } from "lucide-react";
 export default function Home() {
   return (
     <main className="relative w-full mx-auto max-w-screen-lg px-8 md:px-20 pt-8 pb-10">
-      <div className="absolute w-[600px] h-[600px] right-[400px] bg-red-500/[25%] -z-10  rounded-full blur-3xl" />
-      <div className="absolute w-[600px] h-[600px] left-[400px] bg-purple-700/[25%] -z-10 rounded-full blur-3xl" />
+      {/* <div className="absolute w-[600px] h-[600px] right-[400px] bg-red-500/[32%] -z-10  rounded-full blur-3xl" /> */}
+      <div className="absolute w-[600px] h-[600px] left-[400px] bg-purple-700/[32%] -z-10 rounded-full blur-3xl" />
       <motion.div
         initial="hidden"
         whileInView="show"
